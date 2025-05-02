@@ -30,7 +30,7 @@ async function logIn(employeeData) {
     };
     return returnData;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 

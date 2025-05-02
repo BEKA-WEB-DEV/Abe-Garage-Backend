@@ -16,7 +16,7 @@ const createOrder = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     return error;
   }
 };
@@ -54,7 +54,7 @@ async function editOrder(req, res, next) {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(500).json({
       error: "Something went wrong!",
     });
@@ -85,7 +85,7 @@ const singleOrder = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     return error;
   }
 };
@@ -124,7 +124,7 @@ const CustomerOrder = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     return error;
   }
 };

@@ -44,7 +44,7 @@ async function getAllVehicles(customerId) {
     INNER JOIN customer_identifier ci ON ci.customer_id = cvi.customer_id
     WHERE cvi.customer_id = ?`;
   const results = await conn.query(query, [customerId]);
-  console.log(results);
+  // console.log(results);
   return results;
 }
 

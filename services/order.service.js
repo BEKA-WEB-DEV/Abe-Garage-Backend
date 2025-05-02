@@ -85,7 +85,7 @@ const orderedServices = async (order_id) => {
   const sql =
     "SELECT * FROM order_services JOIN common_services ON order_services.service_id = common_services.service_id WHERE order_services.order_id = ?";
   const rows = await query(sql, [order_id]);
-  console.log(rows);
+  // console.log(rows);
   return rows;
 };
 
@@ -97,7 +97,7 @@ const getOrderByID = async (order_id) => {
     WHERE o.order_id = ?
   `;
   const rows = await query(sql, [order_id]);
-  console.log(rows);
+  // console.log(rows);
   return rows;
 };
 
@@ -105,7 +105,7 @@ const getVehicleByOrderId = async (order_id) => {
   const sql =
     "SELECT * FROM orders JOIN customer_vehicle_info ON customer_vehicle_info.vehicle_id = orders.vehicle_id JOIN customer_identifier ON customer_identifier.customer_id = orders.customer_id JOIN customer_info ON customer_info.customer_id = customer_identifier.customer_id WHERE orders.order_id = ?";
   const rows = await query(sql, [order_id]);
-  console.log(rows);
+  // console.log(rows);
   return rows;
 };
 
@@ -185,7 +185,7 @@ const editOrder = async (orderData) => {
     let success = false;
     await withTransaction(async (connection) => {
       const order_id = orderData.order_id;
-      console.log(order_id);
+      // console.log(order_id);
 
       if (orderData.active_order) {
         const query1 = `UPDATE orders SET active_order = ? WHERE order_id = ?`;
@@ -193,7 +193,7 @@ const editOrder = async (orderData) => {
           orderData.active_order,
           order_id,
         ]);
-        console.log(rows1);
+        // console.log(rows1);
         if (!rows1) {
           throw new Error("Failed to update active_order in orders table");
         }
@@ -227,7 +227,7 @@ const editOrder = async (orderData) => {
           orderData.additional_request_price || 0,
           order_id,
         ]);
-        console.log(rows2);
+        // console.log(rows2);
         if (!rows2) {
           throw new Error("Failed to update order_info table");
         }
@@ -239,7 +239,7 @@ const editOrder = async (orderData) => {
           orderData.order_status,
           order_id,
         ]);
-        console.log(rows3);
+        // console.log(rows3);
         if (!rows3) {
           throw new Error("Failed to update order_status table");
         }
@@ -254,7 +254,7 @@ const editOrder = async (orderData) => {
               order_id,
               service.service_id,
             ]);
-            console.log(rows4);
+            // console.log(rows4);
             if (!rows4) {
               throw new Error("Failed to update order_services table");
             }
@@ -335,7 +335,7 @@ const getOrdersByCustomerId = async (customer_id) => {
       o.customer_id = ?;
   `;
   const rows = await query(sql, [customer_id]);
-  console.log(rows);
+  // console.log(rows);
   return rows.length > 0 ? rows : null;
 };
 

@@ -13,7 +13,7 @@ const generateEmployeeId = () => {
 async function checkIfEmployeeExists(email) {
   const query = "SELECT * FROM employee WHERE employee_email = ?";
   const rows = await conn.query(query, [email]);
-  console.log(rows);
+  // console.log(rows);
   return rows.length > 0;
 }
 
@@ -36,7 +36,7 @@ async function createEmployee(employee) {
       employee.employee_email,
       employee.active_employee,
     ]);
-    console.log(rows);
+    // console.log(rows);
     if (rows.affectedRows !== 1) {
       return false;
     }
@@ -66,7 +66,7 @@ async function createEmployee(employee) {
       employee_id: employee_id,
     };
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
   // Return the employee object
   return createdEmployee;

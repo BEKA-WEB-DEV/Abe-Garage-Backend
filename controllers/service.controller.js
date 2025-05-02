@@ -14,7 +14,7 @@ const createServices = async (req, res, next) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.send(error);
   }
 };
@@ -50,7 +50,7 @@ const getSingleService = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 };
 
@@ -69,7 +69,7 @@ const editService = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 };
 
@@ -89,7 +89,7 @@ async function deleteService(req, res, next) {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(400).json({ error: "Something went wrong" });
   }
 }

@@ -80,7 +80,7 @@ async function getVehicleById(req, res, next) {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(400).json({
       error: "Something went wrong!",
     });
@@ -125,7 +125,7 @@ async function editVehicleById(req, res, next) {
       });
     }
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(400).json({
       error: "something went wrong!",
     });

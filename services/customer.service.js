@@ -11,7 +11,7 @@ const generateCustomerId = () => {
 async function checkIfCustomerExists(email) {
   const query = "SELECT * FROM customer_identifier WHERE customer_email = ?";
   const rows = await conn.query(query, [email]);
-  console.log(rows);
+  // console.log(rows);
   return rows.length > 0;
 }
 
@@ -20,7 +20,7 @@ async function addCustomer(customer) {
   // Generate custom customer ID and hash
   const customer_id = generateCustomerId();
   const customer_hash = uuidv4();
-  console.log("Generated Customer ID:", customer_id);
+  // console.log("Generated Customer ID:", customer_id);
   
   try {
     // Insert customer data into customer_identifier with custom ID
